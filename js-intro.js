@@ -6,37 +6,38 @@ var mantra = "Be the dev";
 
 // 1. Write the code that returns 'B' from mantra.
 
-const returnB = (mantra) => mantra.charAt(0)
+function getFirstLetter (str) {
+    var firstLetter = str.charAt(0)
+    return firstLetter
+}
 
-console.log(returnB(mantra))
-
+console.log(mantra.charAt(0))
+console.log(getFirstLetter(mantra) + '\n')
 
 // 2. Write the code that determines if there is a 'x' in mantra.
 
-const findX = (mantra) => {
-    let x = mantra.indexOf('x')
-        if ( x === true) {
-            return "x in mantra"
-        } else {
-            return "no x in mantra"
-        }
+
+const findX = (string) => {
+    if (string.includes('x')) {
+        return 'X in mantra'
+    } else {
+        return 'no X in mantra'
+    }
 }
 
-console.log(findX(mantra))
+console.log(findX(mantra) + '\n')
 
 // 3. Write the code that determines if there is a 'v' in mantra.
 
-const findV = (mantra) => {
-    let v = mantra.indexOf('v')
-        if ( v === true) {
-            return "v in mantra"
-        } else {
-            return "no v in mantra"
-        }
+const findV = (string) => {
+    if (string.includes('v')) {
+        return 'V in mantra'
+    } else {
+        return 'no V in mantra'
+    }
 }
 
-console.log(findV(mantra))
-
+console.log(findV(mantra) + '\n')
 
 // Stretch: Write the code that returns the position of 'v' in mantra.
 
@@ -72,6 +73,8 @@ for (let i=0; i < mantra.length; i++) {
     console.log(mantra.charAt(i))
 }
 
+console.log('\n')
+
 // Stretch: Using a while loop.
 
 
@@ -81,14 +84,21 @@ for (let i=0; i < mantra.length; i++) {
 
 var message = "thisisateststring"
 
-
 // 7. Write a function that takes a string like message as an argument and returns the string without vowels.
 
-
-const removeVowels = string => string.replace(/[aeiou]/gi, '');
+function removeVowels (str) {
+    let vowels = 'aeiou'
+    let holder = []
+    str.split("").forEach(element => {
+        if (vowels.indexOf(element) === -1)
+            holder.push(element)
+    })
+    
+    return holder.join('')
+}
 
 console.log(removeVowels(message))
-
+console.log('\n')
 
 // Stretch: Update your function to throw an exception if the argument is not a string.
 
